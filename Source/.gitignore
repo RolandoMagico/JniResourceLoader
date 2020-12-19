@@ -1,0 +1,15 @@
+/.vs
+/Common/*.aps
+/ResourceLoader*/.vs
+/ResourceLoader*/*.user
+/ResourceLoader*/bin/Debug
+/ResourceLoader*/obj
+/ResourceLoader*/bin/Release/*/*.exp
+/ResourceLoader*/bin/Release/*/*.iobj
+/ResourceLoader*/bin/Release/*/*.ipdb
+/ResourceLoader*/bin/Release/*/*.lib
+/ResourceLoader*/bin/Release/*/*.pdb
+/ResourceLoader*/bin/Release/*/*.metagen
+/ResourceLoader*.Tests/bin
+/ResourceLoader*.Tests/Properties/launchSettings.json
+/ResourceLoader.Java/**/*.class
