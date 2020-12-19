@@ -74,6 +74,8 @@ JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_ge
         env->NewString((const jchar*)resourceValue->c_str(), (jsize)resourceValue->length());
         delete resourceValue;
       }
+
+      env->ReleaseStringChars(library, libraryChars);
     }
   }
   

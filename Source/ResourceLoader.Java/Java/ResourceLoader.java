@@ -21,6 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
 ***********************************************************************************************************************/
+
 package rolandomagico.jniresourceloader;
 
 public class ResourceLoader 
@@ -30,6 +31,7 @@ public class ResourceLoader
     final String archDataModel = System.getProperty("sun.arch.data.model");
     System.loadLibrary("libraries/ResourceLoader.Java." + archDataModel);
   }
+
   /**
    * Gets the string resource from the specific library.
    * 
