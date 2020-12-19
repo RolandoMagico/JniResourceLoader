@@ -71,7 +71,7 @@ JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_ge
       wstring* resourceValue = loader.LoadStringResource(path, (uint32_t)resourceId);
       if (resourceValue != nullptr)
       {
-        env->NewString((const jchar*)resourceValue->c_str(), (jsize)resourceValue->length());
+        result = env->NewString((const jchar*)resourceValue->c_str(), (jsize)resourceValue->length());
         delete resourceValue;
       }
 
