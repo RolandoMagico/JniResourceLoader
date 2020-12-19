@@ -2,6 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="ResourceLoader.Console.cpp" />
+    <ClCompile Include="..\Common\ResourceLoader.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -10,6 +13,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\resource.h" />
+    <ClInclude Include="..\Common\ResourceLoader.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Common\Versions.rc">

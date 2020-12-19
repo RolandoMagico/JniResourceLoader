@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\ResourceLoader.cpp" />
     <ClCompile Include="ResourceLoader.Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\resource.h" />
+    <ClInclude Include="..\Common\ResourceLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Common\Versions.rc" />
