@@ -31,19 +31,14 @@ public class ResourceLoader
     System.loadLibrary("libraries/ResourceLoader.Java." + archDataModel);
   }
   /**
-   * Gets a translation for the specific menu entry.
+   * Gets the string resource from the specific library.
    * 
    * @param library
    *        The path to the library containing the translation data. 
-   * @param languageId
-   *        The ID of the language.
-   * @param menuId
-   *        The ID of the menu entry.
-   * @param defaultValue
-   *        The default value which will be returned if no translation has been found.
+   * @param resourceId
+   *        The ID of the resource.
    * @return
-   *        The translated string.
+   *        The string with the specific id or null if the resource doesn't exist.
    */
-  public static native String getTranslatedString(
-    final String library, final long languageId, final long menuId, final String defaultValue);
+  public static native String getStringResource(final String library, final long resourceId);
 }

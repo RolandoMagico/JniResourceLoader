@@ -52,7 +52,7 @@
 ***********************************************************************************************************************/
 namespace RolandoMagico
 {
-  wstring* ResourceLoader::LoadStringResource(wstring& library, int64_t languageId, int64_t menuId)
+  wstring* ResourceLoader::LoadStringResource(const wstring& library, uint32_t resourceId)
   {
     wstring* result = nullptr;
 
@@ -60,7 +60,7 @@ namespace RolandoMagico
     if (libraryHandle != nullptr)
     {
       wchar_t buffer[255];
-      if (LoadString(libraryHandle, languageId, buffer, _countof(buffer)) != 0)
+      if (LoadString(libraryHandle, resourceId, buffer, _countof(buffer)) != 0)
       {
         result = new wstring(buffer);
       }

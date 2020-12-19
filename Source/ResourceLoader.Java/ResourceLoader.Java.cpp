@@ -27,7 +27,10 @@
 ***********************************************************************************************************************/
 #include "rolandomagico_jniresourceloader_ResourceLoader.h"
 #include "ResourceLoader.h"
+#include <string>
 
+using namespace std;
+using namespace RolandoMagico;
 /***********************************************************************************************************************
  DEFINES
 ***********************************************************************************************************************/
@@ -51,10 +54,30 @@
 /***********************************************************************************************************************
  IMPLEMENTATION
 ***********************************************************************************************************************/
-JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_getTranslatedString
-(JNIEnv* env, jclass instance, jstring library, jlong languageId, jlong menuId, jstring defaultValue)
+JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_getStringResource
+(JNIEnv* env, jclass instance, jstring library, jlong resourceId)
 {
-  return nullptr;
+  jstring result = nullptr;
+
+  if ((library != nullptr) && (resourceId <= UINT32_MAX))
+  {
+    jboolean isCopy;
+    const jchar* libraryChars = env->GetStringChars(library, &isCopy);
+
+    if (libraryChars != nullptr)
+    {
+      ResourceLoader loader;
+      wstring path = (wchar_t*)libraryChars;
+      wstring* resourceValue = loader.LoadStringResource(path, (uint32_t)resourceId);
+      if (resourceValue != nullptr)
+      {
+        env->NewString((const jchar*)resourceValue->c_str(), (jsize)resourceValue->length());
+        delete resourceValue;
+      }
+    }
+  }
+  
+  return result;
 }
 /***********************************************************************************************************************
  EOF

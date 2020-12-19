@@ -9,11 +9,11 @@ extern "C" {
 #endif
 /*
  * Class:     rolandomagico_jniresourceloader_ResourceLoader
- * Method:    getTranslatedString
- * Signature: (Ljava/lang/String;JJLjava/lang/String;)Ljava/lang/String;
+ * Method:    getStringResource
+ * Signature: (Ljava/lang/String;J)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_getTranslatedString
-  (JNIEnv *, jclass, jstring, jlong, jlong, jstring);
+JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_getStringResource
+  (JNIEnv *, jclass, jstring, jlong);
 
 #ifdef __cplusplus
 }
