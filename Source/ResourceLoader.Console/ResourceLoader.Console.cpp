@@ -26,6 +26,8 @@
  INCLUDES
 ***********************************************************************************************************************/
 #include "ResourceLoader.h"
+#include <iostream>
+using namespace std;
 using namespace RolandoMagico;
 /***********************************************************************************************************************
  DEFINES
@@ -54,8 +56,12 @@ int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
 {
   ResourceLoader loader;
 
-  wstring* result = loader.LoadStringResource(L"C:\\Program Files\\TortoiseGit\\Languages\\TortoiseProc1031.dll", 223);
-  delete result;
+  wstring result;
+  if (loader.LoadStringResource(L"C:\\Program Files\\TortoiseGit\\Languages\\TortoiseProc1031.dll", 223, result) == true)
+  {
+    wcout << result;
+  }
+
   return 0;
 }
 

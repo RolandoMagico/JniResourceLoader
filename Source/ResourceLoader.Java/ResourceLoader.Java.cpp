@@ -68,11 +68,10 @@ JNIEXPORT jstring JNICALL Java_rolandomagico_jniresourceloader_ResourceLoader_ge
     {
       ResourceLoader loader;
       wstring path = (wchar_t*)libraryChars;
-      wstring* resourceValue = loader.LoadStringResource(path, (uint32_t)resourceId);
-      if (resourceValue != nullptr)
+      wstring resourceValue;
+      if (loader.LoadStringResource(path, (uint32_t)resourceId, resourceValue) == true)
       {
-        result = env->NewString((const jchar*)resourceValue->c_str(), (jsize)resourceValue->length());
-        delete resourceValue;
+        result = env->NewString((const jchar*)resourceValue.c_str(), (jsize)resourceValue.length());
       }
 
       env->ReleaseStringChars(library, libraryChars);

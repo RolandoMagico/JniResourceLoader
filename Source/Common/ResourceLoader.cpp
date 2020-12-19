@@ -52,9 +52,9 @@
 ***********************************************************************************************************************/
 namespace RolandoMagico
 {
-  wstring* ResourceLoader::LoadStringResource(const wstring& library, uint32_t resourceId)
+  bool ResourceLoader::LoadStringResource(const wstring& library, uint32_t resourceId, wstring& result)
   {
-    wstring* result = nullptr;
+    bool loadSuccessful = false;
 
     HMODULE libraryHandle = LoadLibrary(library.c_str());
     if (libraryHandle != nullptr)
@@ -62,11 +62,12 @@ namespace RolandoMagico
       wchar_t buffer[255];
       if (LoadString(libraryHandle, resourceId, buffer, _countof(buffer)) != 0)
       {
-        result = new wstring(buffer);
+        result = buffer;
+        loadSuccessful = true;
       }
     }
 
-    return result;
+    return loadSuccessful;
   }
 }
 

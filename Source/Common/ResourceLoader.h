@@ -38,7 +38,7 @@ namespace RolandoMagico
   class ResourceLoader
   {
   public:
-    wstring* LoadStringResource(const wstring& library, uint32_t resourceId);
+    bool LoadStringResource(const wstring& library, uint32_t resourceId, wstring& result);
   };
 }
 /***********************************************************************************************************************
